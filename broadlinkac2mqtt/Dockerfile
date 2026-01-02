@@ -8,10 +8,10 @@ ARG BUILD_ARCH
 WORKDIR /app
 
 # Загружаем архив и распаковываем его
-RUN wget https://github.com/ArtemVladimirov/broadlinkac2mqtt/archive/refs/tags/v1.5.5.zip && \
-    unzip v1.5.5.zip && \
-    mv /app/broadlinkac2mqtt-1.5.5 /app/broadlinkac2mqtt && \
-    rm v1.5.5.zip
+RUN wget https://github.com/djvabe/broadlinkac2mqtt/archive/refs/tags/v1.5.6.zip && \
+    unzip v1.5.6.zip && \
+    mv /app/broadlinkac2mqtt-1.5.6 /app/broadlinkac2mqtt && \
+    rm v1.5.6.zip
 
 # Переходим в распакованную директорию
 WORKDIR /app/broadlinkac2mqtt
@@ -72,7 +72,7 @@ LABEL \
     io.hass.arch="${BUILD_ARCH}" \
     io.hass.type="addon" \
     io.hass.version=${BUILD_VERSION} \
-    maintainer="Artem Vladimirov <artyom-vladimirov@yandex.ru>" \
+    maintainer="Benjamin Varga <djvabe@gmail.com>" \
     org.label-schema.description="Control your broadlink-based air conditioner using Home Assistant" \
     org.label-schema.build-date=${BUILD_DATE} \
     org.label-schema.name="broadlinkac2mqtt" \
